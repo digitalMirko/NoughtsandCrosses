@@ -30,7 +30,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="0"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -40,7 +41,8 @@
             android:layout_column="1"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="17dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="1"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -50,7 +52,8 @@
             android:layout_column="2"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="15dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="2"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -60,7 +63,8 @@
             android:layout_column="0"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="25dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="3"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -70,7 +74,8 @@
             android:layout_column="1"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="25dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="4"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -80,7 +85,8 @@
             android:layout_column="2"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="25dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="5"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -90,7 +96,8 @@
             android:layout_column="0"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="32dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="6"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -100,7 +107,8 @@
             android:layout_column="1"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="32dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="7"/>
 
         <ImageView
             android:layout_width="90dp"
@@ -110,7 +118,8 @@
             android:layout_column="2"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="32dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="8"/>
 
     </GridLayout>
 
