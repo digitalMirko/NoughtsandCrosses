@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,9 +67,22 @@ public class MainActivity extends AppCompatActivity {
                         gameState[winningPosition[0]] != 2){
 
                     // print out winner to console, checking logic to see if its working
-                    System.out.println(gameState[winningPosition[0]]);
+//                    System.out.println(gameState[winningPosition[0]]);
+
+                    // Who has won
+                    String winner = "O";
+                    if (gameState[winningPosition[0]] == 0){
+
+                        winner = "X";
+                    }
+
 
                     // Game Winner pop up box
+
+                    TextView winnerMessage = (TextView)findViewById(R.id.winnerMessage);
+
+                    winnerMessage.setText(winner + " has won!");
+
                     LinearLayout layout = (LinearLayout)findViewById(R.id.playAgainLayout);
 
                     layout.setVisibility(View.VISIBLE);
