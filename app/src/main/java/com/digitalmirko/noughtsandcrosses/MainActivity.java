@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
     // 0 = green (X), 1 = red (O)
     int activePlayer = 0;
 
+    // Is game active
+    boolean gameIsActive = true;
+
     // Memory for managing game state, 2 means unplayed, nothing in that slot 0-9
 
     int[] gameState = {2, 2, 2, 2, 2, 2, 2, 2, 2};
@@ -33,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         // 0 to 8, tapped area counter
         int tappedCounter = Integer.parseInt(counter.getTag().toString());
 
-        // Point on board hasnt been tapped yep its ok to play
-        if (gameState[tappedCounter] == 2) {
+        // Point on board hasnt been tapped yep its ok to play and game is active
+        if (gameState[tappedCounter] == 2 && gameIsActive) {
 
             gameState[tappedCounter] = activePlayer;
 
@@ -57,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
             // sets the green.png to the image
 //        counter.setImageResource(R.drawable.green);
 
-            // Animate back down in 500 mili seconds (short time) with 1 spin
-            counter.animate().translationYBy(1000f).rotation(360).setDuration(500);
+            // Animate back down in 100 mili seconds (short time) with 1 spin
+            counter.animate().translationYBy(1000f).rotation(360).setDuration(100);
 
             // check to see if theres a winner
             for (int[] winningPosition: winningPositions) {
@@ -69,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // print out winner to console, checking logic to see if its working
 //                    System.out.println(gameState[winningPosition[0]]);
+
+                    // Game is no longer active
+                    gameIsActive = false;
 
                     // Who has won
                     String winner = "O";
@@ -88,13 +94,15 @@ public class MainActivity extends AppCompatActivity {
 
                     layout.setVisibility(View.VISIBLE);
 
-                }
+                } 
             }
         }
     }
 
     // Allows game to be played again
     public void playAgain(View view){
+
+        gameIsActive = true;
 
         LinearLayout layout = (LinearLayout)findViewById(R.id.playAgainLayout);
         layout.setVisibility(View.INVISIBLE);
