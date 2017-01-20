@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
         // User taps on space, gets the image user tapped on
         ImageView counter = (ImageView) view;
 
+        // get the image tags
+        System.out.println(counter.getTag().toString());
+
         // Moving 1,000 pixels up and off the screen
         counter.setTranslationY(-1000f);
 
