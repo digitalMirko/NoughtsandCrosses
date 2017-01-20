@@ -10,6 +10,10 @@ public class MainActivity extends AppCompatActivity {
     // 0 = green (X), 1 = red (O)
     int activePlayer = 0;
 
+    // Memory for managing game state, 2 means unplayed, nothing in that slot 0-9
+
+    int[] gameState = {2, 2, 2, 2, 2, 2, 2, 2, 2};
+
     public void dropIn(View view){
 
         // User taps on space, gets the image user tapped on
