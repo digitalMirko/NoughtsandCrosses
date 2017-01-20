@@ -22,27 +22,36 @@ public class MainActivity extends AppCompatActivity {
         // get the image tags
         System.out.println(counter.getTag().toString());
 
-        // Moving 1,000 pixels up and off the screen
-        counter.setTranslationY(-1000f);
+        // 0 to 8, tapped area counter
+        int tappedCounter = Integer.parseInt(counter.getTag().toString());
 
-        if (activePlayer == 0) {
-             counter.setImageResource(R.drawable.green);
+        // Point on board hasnt been tapped yep its ok to play
+        if (gameState[tappedCounter] == 2) {
 
-            // red to go next
-            activePlayer = 1;
-        } else {
+            gameState[tappedCounter] = activePlayer;
 
-            counter.setImageResource(R.drawable.red);
+            // Moving 1,000 pixels up and off the screen
+            counter.setTranslationY(-1000f);
 
-            // green to go next
-            activePlayer = 0;
-        }
+            if (activePlayer == 0) {
+                counter.setImageResource(R.drawable.green);
 
-        // sets the green.png to the image
+                // red to go next
+                activePlayer = 1;
+            } else {
+
+                counter.setImageResource(R.drawable.red);
+
+                // green to go next
+                activePlayer = 0;
+            }
+
+            // sets the green.png to the image
 //        counter.setImageResource(R.drawable.green);
 
-        // Animate back down in 500 mili seconds (short time) with 1 spin
-        counter.animate().translationYBy(1000f).rotation(360).setDuration(500);
+            // Animate back down in 500 mili seconds (short time) with 1 spin
+            counter.animate().translationYBy(1000f).rotation(360).setDuration(500);
+        }
     }
 
     @Override
