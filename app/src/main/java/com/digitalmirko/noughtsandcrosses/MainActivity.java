@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
                         if (counterState == 2) gameIsOver = false;
                     }
-
                         if(gameIsOver) {
 
                             gameWord("draw");
