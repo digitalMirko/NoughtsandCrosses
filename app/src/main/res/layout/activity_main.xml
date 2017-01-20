@@ -70,8 +70,7 @@
             android:layout_column="1"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="25dp"
-            android:onClick="dropIn"
-            android:elevation="1dp" />
+            android:onClick="dropIn" />
 
         <ImageView
             android:layout_width="90dp"

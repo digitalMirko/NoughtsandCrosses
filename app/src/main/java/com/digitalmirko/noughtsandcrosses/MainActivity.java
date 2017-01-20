@@ -7,6 +7,9 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // 0 = green (X), 1 = red (O)
+    int activePlayer = 0;
+
     public void dropIn(View view){
 
         // User taps on space, gets the image user tapped on
@@ -15,8 +18,21 @@ public class MainActivity extends AppCompatActivity {
         // Moving 1,000 pixels up and off the screen
         counter.setTranslationY(-1000f);
 
+        if (activePlayer == 0) {
+             counter.setImageResource(R.drawable.green);
+
+            // red to go next
+            activePlayer = 1;
+        } else {
+
+            counter.setImageResource(R.drawable.red);
+
+            // green to go next
+            activePlayer = 0;
+        }
+
         // sets the green.png to the image
-        counter.setImageResource(R.drawable.green);
+//        counter.setImageResource(R.drawable.green);
 
         // Animate back down in 500 mili seconds (short time) with 1 spin
         counter.animate().translationYBy(1000f).rotation(360).setDuration(500);
