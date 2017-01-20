@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
                     // print out winner to console, checking logic to see if its working
                     System.out.println(gameState[winningPosition[0]]);
+
+                    // Game Winner pop up box
+                    LinearLayout layout = (LinearLayout)findViewById(R.id.playAgainLayout);
+
+                    layout.setVisibility(View.VISIBLE);
+
                 }
             }
         }
