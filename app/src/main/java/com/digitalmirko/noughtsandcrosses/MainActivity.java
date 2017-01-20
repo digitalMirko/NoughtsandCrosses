@@ -45,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
             counter.setTranslationY(-1000f);
 
             if (activePlayer == 0) {
-                counter.setImageResource(R.drawable.green);
+                counter.setImageResource(R.drawable.darkgreen);
 
                 // red to go next
                 activePlayer = 1;
             } else {
 
-                counter.setImageResource(R.drawable.red);
+                counter.setImageResource(R.drawable.darkred);
 
                 // green to go next
                 activePlayer = 0;
@@ -83,16 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         winner = "X";
                     }
 
-
-                    // Game Winner pop up box
-
-                    TextView winnerMessage = (TextView)findViewById(R.id.winnerMessage);
-
-                    winnerMessage.setText(winner + " has won!");
-
-                    LinearLayout layout = (LinearLayout)findViewById(R.id.playAgainLayout);
-
-                    layout.setVisibility(View.VISIBLE);
+                    gameWord(winner);
 
                 } else {
 
@@ -105,18 +96,28 @@ public class MainActivity extends AppCompatActivity {
 
                         if(gameIsOver) {
 
-                            TextView winnerMessage = (TextView) findViewById(R.id.winnerMessage);
-
-                            winnerMessage.setText("It's a draw!");
-
-                            LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
-
-                            layout.setVisibility(View.VISIBLE);
-
+                            gameWord("draw");
                     }
                 }
             }
         }
+    }
+
+    // Game Winner pop up box method
+    public void gameWord (String word){
+
+        TextView winnerMessage = (TextView)findViewById(R.id.winnerMessage);
+
+        if (word == "X" || word == "O") {
+
+            winnerMessage.setText(word + " has won!");
+        }  else {
+            winnerMessage.setText("It's a draw!");
+        }
+
+        LinearLayout layout = (LinearLayout)findViewById(R.id.playAgainLayout);
+
+        layout.setVisibility(View.VISIBLE);
     }
 
     // Allows game to be played again
