@@ -94,7 +94,27 @@ public class MainActivity extends AppCompatActivity {
 
                     layout.setVisibility(View.VISIBLE);
 
-                } 
+                } else {
+
+                    boolean gameIsOver = true;
+
+                    for (int counterState : gameState ) {
+
+                        if (counterState == 2) gameIsOver = false;
+                    }
+
+                        if(gameIsOver) {
+
+                            TextView winnerMessage = (TextView) findViewById(R.id.winnerMessage);
+
+                            winnerMessage.setText("It's a draw!");
+
+                            LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
+
+                            layout.setVisibility(View.VISIBLE);
+
+                    }
+                }
             }
         }
     }
