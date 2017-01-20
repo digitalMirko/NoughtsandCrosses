@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     // All the winning positions
     int[][] winningPositions = {{0,1,2},{3,4,5},{6,7,8}, // Horizontal Winning Positions
-                                {0,3,6} ,{1,4,7},{2,5,8}, // Vertical Winning Positions
-                                {0,4,8}, {2,4,6}};  // Angular Winning Positions
+                                {0,3,6},{1,4,7},{2,5,8}, // Vertical Winning Positions
+                                {0,4,8},{2,4,6}};  // Angular Winning Positions
 
     public void dropIn(View view){
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView counter = (ImageView) view;
 
         // get the image tags
-        System.out.println(counter.getTag().toString());
+//        System.out.println(counter.getTag().toString());
 
         // 0 to 8, tapped area counter
         int tappedCounter = Integer.parseInt(counter.getTag().toString());
@@ -56,6 +56,18 @@ public class MainActivity extends AppCompatActivity {
 
             // Animate back down in 500 mili seconds (short time) with 1 spin
             counter.animate().translationYBy(1000f).rotation(360).setDuration(500);
+
+            // check to see if theres a winner
+            for (int[] winningPosition: winningPositions) {
+
+                if(gameState[winningPosition[0]] == gameState[winningPosition[1]] &&
+                        gameState[winningPosition[1]] == gameState[winningPosition[2]] &&
+                        gameState[winningPosition[0]] != 2){
+
+                    // print out winner to console, checking logic to see if its working
+                    System.out.println(gameState[winningPosition[0]]);
+                }
+            }
         }
     }
 
